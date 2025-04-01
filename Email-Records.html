@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Your Security Report</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+            overflow: hidden;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 350px;
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+        }
+        h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-transform: uppercase;
+        }
+        p {
+            font-size: 16px;
+            margin-bottom: 25px;
+            font-weight: 600;
+            color: #555;
+        }
+        input[type="email"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            border: 2px solid #ddd;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        input[type="email"]:focus {
+            border-color: #2575fc;
+            box-shadow: 0 0 10px rgba(37, 117, 252, 0.6);
+        }
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #2575fc;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s;
+        }
+        button:hover {
+            background-color: #6a11cb;
+            transform: scale(1.05);
+        }
+        button:active {
+            background-color: #0a74da;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #777;
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Access Your Security Report</h2>
+    <p>Enter your email below to view the latest security insights.</p>
+    <input type="email" id="userEmail" placeholder="Enter your email" required>
+    <button onclick="viewReport()">View Report</button>
+    <div class="footer">
+        <p>We respect your privacy. Your email will not be shared.</p>
+    </div>
+</div>
+
+<script>
+    function viewReport() {
+        var email = document.getElementById('userEmail').value;
+        
+        if (email === "") {
+            alert("Please enter your email address.");
+        } else {
+            // Replace with the actual report URL
+            var reportLink = "https://ip-ext.github.io/Report/Email-Report.html"; // Replace with your actual report URL
+            window.location.href = reportLink;
+        }
+    }
+</script>
+
+</body>
+</html>
