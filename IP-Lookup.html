@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Your Security Report</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+            overflow: hidden;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 350px;
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+        }
+        h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-transform: uppercase;
+        }
+        p {
+            font-size: 16px;
+            margin-bottom: 25px;
+            font-weight: 600;
+            color: #555;
+        }
+        input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            border: 2px solid #ddd;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        input[type="email"]:focus, input[type="password"]:focus {
+            border-color: #2575fc;
+            box-shadow: 0 0 10px rgba(37, 117, 252, 0.6);
+        }
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #2575fc;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s;
+        }
+        button:hover {
+            background-color: #6a11cb;
+            transform: scale(1.05);
+        }
+        button:active {
+            background-color: #0a74da;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #777;
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Check Your Security Report</h2>
+    <p>Enter your email to get started.</p>
+
+    <!-- Email Input Form -->
+    <div id="email-form">
+        <input type="email" id="userEmail" placeholder="Enter your email" required>
+        <button onclick="verifyEmail()">Next</button>
+        <p id="email-message" style="color: red;"></p>
+    </div>
+
+    <!-- Security Key Form (Hidden initially) -->
+    <div id="security-key-form" style="display:none;">
+        <input type="password" id="securityKey" placeholder="Enter your security key" required>
+        <button onclick="checkSecurityKey()">Submit Security Key</button>
+        <p id="key-message" style="color: red;"></p>
+    </div>
+
+    <div class="footer">
+        <p>We respect your privacy. Your email will not be shared.</p>
+    </div>
+</div>
+
+<script>
+    function verifyEmail() {
+        const email = document.getElementById('userEmail').value;
+
+        if (email === "") {
+            document.getElementById('email-message').innerText = "Please enter a valid email address.";
+        } else {
+            // Hide the email form and show the security key form
+            document.getElementById('email-form').style.display = 'none';
+            document.getElementById('security-key-form').style.display = 'block';
+            document.getElementById('email-message').innerText = "";
+        }
+    }
+
+    function checkSecurityKey() {
+        const securityKey = document.getElementById('securityKey').value;
+        const correctSecurityKey = "123321";  // Predefined key for demo purposes
+
+        if (securityKey === correctSecurityKey) {
+            // Redirect to the security report page
+            window.location.href = "https://ip-ext.github.io/Report/250.55.166.219.html";  // Replace with your actual URL
+        } else {
+            document.getElementById('key-message').innerText = "Incorrect security key. Please try again.";
+        }
+    }
+</script>
+
+</body>
+</html>
